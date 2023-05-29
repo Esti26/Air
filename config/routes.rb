@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'wigs/index'
+  get 'wigs/show'
+  get 'wigs/new'
+  get 'wigs/create'
+  get 'wigs/edit'
+  get 'wigs/update'
+  get 'wigs/destroy'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
