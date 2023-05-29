@@ -7,9 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do
-  User.create(email: Faker::Internet.email, password: "12345")
+  User.create!(email: Faker::Internet.email, password: "123456")
 end
 
-30.times do
-  Wig.create(color: Faker::Color.color_name, length: Faker::Measurement.length)
+10.times do
+  wig = Wig.new(color: Faker::Color.color_name, length: Faker::Measurement.length)
+  wig.owner = User.all.sample
+  wig.save!
 end
