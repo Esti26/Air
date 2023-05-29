@@ -1,0 +1,50 @@
+[1mdiff --git a/Gemfile b/Gemfile[m
+[1mindex 65adbed..246fd73 100644[m
+[1m--- a/Gemfile[m
+[1m+++ b/Gemfile[m
+[36m@@ -27,6 +27,8 @@[m [mgem "stimulus-rails"[m
+ # Build JSON APIs with ease [https://github.com/rails/jbuilder][m
+ gem "jbuilder"[m
+ [m
+[32m+[m[32mgem 'faker'[m
+[32m+[m
+ # Use Redis adapter to run Action Cable in production[m
+ # gem "redis", "~> 4.0"[m
+ [m
+[1mdiff --git a/Gemfile.lock b/Gemfile.lock[m
+[1mindex 364c322..b270fd8 100644[m
+[1m--- a/Gemfile.lock[m
+[1m+++ b/Gemfile.lock[m
+[36m@@ -114,6 +114,8 @@[m [mGEM[m
+       railties (>= 3.2)[m
+     erubi (1.12.0)[m
+     execjs (2.8.1)[m
+[32m+[m[32m    faker (3.2.0)[m
+[32m+[m[32m      i18n (>= 1.8.11, < 2)[m
+     ffi (1.15.5)[m
+     font-awesome-sass (6.4.0)[m
+       sassc (~> 2.0)[m
+[36m@@ -265,6 +267,7 @@[m [mDEPENDENCIES[m
+   debug[m
+   devise[m
+   dotenv-rails[m
+[32m+[m[32m  faker[m
+   font-awesome-sass (~> 6.1)[m
+   importmap-rails[m
+   jbuilder[m
+[1mdiff --git a/db/seeds.rb b/db/seeds.rb[m
+[1mindex bc25fce..c340c87 100644[m
+[1m--- a/db/seeds.rb[m
+[1m+++ b/db/seeds.rb[m
+[36m@@ -5,3 +5,11 @@[m
+ #[m
+ #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])[m
+ #   Character.create(name: "Luke", movie: movies.first)[m
+[32m+[m
+[32m+[m[32m10.times do[m
+[32m+[m[32m  User.create(email: Faker::Internet.email, password: "12345")[m
+[32m+[m[32mend[m
+[32m+[m
+[32m+[m[32m30.times do[m
+[32m+[m[32m  Wig.create(color: Faker::Color.color_name, length: Faker::Measurement.length)[m
+[32m+[m[32mend[m
