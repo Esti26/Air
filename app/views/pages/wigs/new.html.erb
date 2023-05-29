@@ -1,0 +1,6 @@
+<h1>Add a new Wig</h1>
+<%= simple_form_for(@wig) do |f| %>
+  <%= f.input :color %>
+  <%= f.input :length %>
+  <%= f.submit :class => "btn btn-success btn-mini" %>
+<% end %>
