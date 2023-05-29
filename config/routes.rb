@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :wigs do
+    resources :wig_rentals, only: %i[new create]
+  end
 end
