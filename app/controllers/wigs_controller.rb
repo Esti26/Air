@@ -35,7 +35,7 @@ class WigsController < ApplicationController
   end
 
   def destroy
-    @wig.destroy
+    @wig.destroy 
     redirect_to wigs_url, notice: 'wig was successfully destroyed.'
   end
 
