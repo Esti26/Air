@@ -1,9 +1,6 @@
 <h1>Rent a wig</h1>
   <% @wigs.each do |wig| %>
 <ul>
- <li>
-  <%= wig.id %>
-  </li>
   <li>
   <%= wig.color %>
   </li>
@@ -11,5 +8,5 @@
   <%= wig.length %>
   </li>
 </ul>
-<%end%>
+<% end %>
 <%= link_to "Add new wig", new_wig_path, class: "btn btn-primary" %>
