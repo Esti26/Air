@@ -2,7 +2,7 @@
 <div class="container-fluid bg-dark" style="height: 100%; ">
   <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap">
     <% @wigs.each do |wig| %>
-    <%= link_to new_user_session_path, data:{}, class:"text-decoration-none text-dark" do%>
+    <%= link_to wig_path(wig.id), data:{}, class:"text-decoration-none text-dark" do%>
     <div class="card mx-2 my-3 d-flex justify-content-center" style="width: 15rem;  border-radius: 10px;">
       <div class="card-header">
         Wig
