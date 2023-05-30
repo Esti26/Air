@@ -1,0 +1,28 @@
+<h1>Wigs rental page</h1>
+
+<div class ="container">
+  <h1>Wig details</h1>
+  <br><br>
+  <ul class="list-unstyled">
+    <h4>Wig <%=@wig.id%></h4>
+     <h5>Color</h5>
+    <li><%=@wig.color%></li>
+    <br>
+    <h5>Length</h5>
+    <li><%=@wig.length%></li>
+    <br>
+    <h5>Owner ID</h5>
+    <li><%=@wig.owner_id%></li>
+    <br>
+    <br>
+    <%= simple_form_for([@wig, @wig_rental]) do |f| %>
+      <%= f.input :rental_start,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :rental_end,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.submit "Rent This Wig", :class => "btn btn-success btn-mini" %>
+    <% end %>
+  </ul>
+</div>
