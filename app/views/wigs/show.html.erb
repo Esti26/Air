@@ -1,8 +1,18 @@
-<h1>Wig details</h1>
-<%=@wig.color%>
-<%=@wig.length%>
-<%=@wig.owner_id%>
-
+<div class="container">
+  <h1>Wig details</h1>
+  <br><br>
+  <ul class="list-unstyled">
+    <h5>Color</h5>
+    <li><%=@wig.color%></li>
+    <br>
+    <h5>Length</h5>
+    <li><%=@wig.length%></li>
+    <br>
+    <h5>Owner ID</h5>
+    <li><%=@wig.owner_id%></li>
+    <br>
+  </ul>
   <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-primary" %>
   <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary" %>
   <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-primary" %>
+</div>

@@ -13,9 +13,8 @@ class WigsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:owner_id])
-    @wig.owner = @user
     @wig = Wig.new(wig_params)
+    @wig.owner = current_user
     if @wig.save
       redirect_to wigs_path, notice: 'wig was successfully created.'
     else
