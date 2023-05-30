@@ -4,7 +4,8 @@
   <h1>Wig details</h1>
   <br><br>
   <ul class="list-unstyled">
-    <h5>Color</h5>
+    <h4>Wig <%=@wig.id%></h4>
+     <h5>Color</h5>
     <li><%=@wig.color%></li>
     <br>
     <h5>Length</h5>
@@ -13,7 +14,15 @@
     <h5>Owner ID</h5>
     <li><%=@wig.owner_id%></li>
     <br>
-
-    <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-primary" %>
+    <br>
+    <%= simple_form_for([@wig, @wig_rental]) do |f| %>
+      <%= f.input :rental_start,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :rental_end,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.submit "Rent This Wig", :class => "btn btn-success btn-mini" %>
+    <% end %>
   </ul>
 </div>
