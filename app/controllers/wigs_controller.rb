@@ -6,6 +6,7 @@ class WigsController < ApplicationController
   end
 
   def show
+    @current_user = current_user
   end
 
   def new
@@ -13,9 +14,8 @@ class WigsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:owner_id])
-    @wig.owner = @user
     @wig = Wig.new(wig_params)
+    @wig.owner = current_user
     if @wig.save
       redirect_to wigs_path, notice: 'wig was successfully created.'
     else
@@ -35,7 +35,7 @@ class WigsController < ApplicationController
   end
 
   def destroy
-    @wig.destroy
+    @wig.destroy 
     redirect_to wigs_url, notice: 'wig was successfully destroyed.'
   end
 
