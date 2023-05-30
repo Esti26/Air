@@ -1,7 +1,7 @@
 <h1>Rent a wig</h1>
 <div class="container-fluid bg-secondary" style="height: 100%; ">
   <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap">
-    <% @wigs.each do |wig| %>
+    <% @wigs.each do |wig| %>  
       <%= link_to wig_path(wig.id), data:{}, class:"text-decoration-none text-dark" do%>
         <div class="card mx-5 my-1 d-flex justify-content-center" style="width: 20rem;  border-radius: 10px;">
           <div class="card-header">
