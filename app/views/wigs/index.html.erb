@@ -1,25 +1,36 @@
 <h1>Rent a wig</h1>
-<div class="container-fluid bg-dark" style="height: 100%; ">
+<div class="container-fluid bg-secondary" style="height: 100%; ">
   <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap">
     <% @wigs.each do |wig| %>
-    <%= link_to wig_path(wig.id), data:{}, class:"text-decoration-none text-dark" do%>
-    <div class="card mx-2 my-3 d-flex justify-content-center" style="width: 15rem;  border-radius: 10px;">
-      <div class="card-header">
-        Wig
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"><strong> id:<%= wig.id %></strong></h5>
-        <h5 class="card-title"><strong> color:<%= wig.color %></strong></h5>
-        <h5 class="card-title"><strong> length:<%= wig.length %>cm</strong></h5>
-      </div>
+      <%= link_to wig_path(wig.id), data:{}, class:"text-decoration-none text-dark" do%>
+        <div class="card mx-5 my-1 d-flex justify-content-center" style="width: 20rem;  border-radius: 10px;">
+          <div class="card-header">
+            Wig
+          </div>
+          <div class="card-body">
+          <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top rounded" alt="...">
+          <br>
+          <br>
+            <h6 class="card-title font-weight-light"><strong><% wig.id %></strong></h6>
+            <h5 class="card-title font-weight-light"> color: <%= wig.color %></h5>
+            <h5 class="card-title"> length: <%= wig.length %>cm</h5>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
   </div>
-  <%end%>
-  <%end%>
-</div>
-<br>
+  <br>
+  <div class= "card m-3 bg-dark">
+    <div  class="container-fluid m-2 d-flex justify-content-center align-items-center" style = "height: 7vh;">
+      <%= link_to "Add new wig", new_wig_path, class: "btn btn-primary col-2" %>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
 
-<div class= "card m-3 bg-dark">
-   <div  class="container-fluid m-2 d-flex justify-content-center align-items-center" style = "height: 7vh;">
-    <%= link_to "Add new wig", new_wig_path, class: "btn btn-primary col-2" %>
+
+    <%# <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
+</div> %>
