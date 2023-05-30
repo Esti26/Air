@@ -1,13 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Rent the best wig</h1>
+<p>Choose the wig that suits you best!</p>
 
 <div class= "card m-3 bg-gray">
-<h1>Sign in</h1>
-<%= simple_form_for(@wig) do |f| %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.submit :class => "btn btn-success btn-mini" %>
-<% end %>
+  <%= link_to "Log in",  new_user_session_path, class: "btn btn-primary" %>
+
+
 </div>
 
 
@@ -15,13 +12,13 @@
   <% @wigs.each do |wig| %>
 <ul>
  <li>
-  <%= wig.id %>
+  id: <%= wig.id %>
   </li>
   <li>
-  <%= wig.color %>
+  color: <%= wig.color %>
   </li>
   <li>
-  <%= wig.length %>
+  length: <%= wig.length %> cm
   </li>
 </ul>
 
