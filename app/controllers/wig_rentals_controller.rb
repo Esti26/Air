@@ -1,4 +1,5 @@
 class WigRentalsController < ApplicationController
+
   def new
     @wig = Wig.find(params[:wig_id])
     @wig_rental = WigRental.new
@@ -17,7 +18,9 @@ class WigRentalsController < ApplicationController
     end
   end
 
-
+  def myrentals
+    @rentals = WigRental.where(user_id: current_user)
+  end
 
   private
 
