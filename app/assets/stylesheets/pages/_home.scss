@@ -1,8 +1,23 @@
 // Specific CSS for your home-page
 
 .carousel-item {
+  position: relative;
   img {
     height: 80vh !important;
     width: 100vw !important;
+    object-fit: cover;
   }
+  .hero-text {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
