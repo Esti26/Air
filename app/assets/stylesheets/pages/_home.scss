@@ -1,1 +1,8 @@
 // Specific CSS for your home-page
+
+.carousel-item {
+  img {
+    height: 80vh !important;
+    width: 100vw !important;
+  }
+}
