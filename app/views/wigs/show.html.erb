@@ -1,25 +1,26 @@
-<div class="container">
-  <h1>Wig details</h1>
-  <br><br>
-  <ul class="list-unstyled">
-    <h5>Color</h5>
-    <li><%=@wig.color%></li>
+<div class="container col-4 justify-content-center">
+  <div class="custom-flex">
+    <h1>Wig details</h1>
+    <br><br>
+      <div class="card mx-5 my-1 justify-content-center" style="width: 20rem;  border-radius: 10px;">
+        <div class="card-header">Wig</div>
+            <div class="card-body">
+              <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top rounded" alt="...">
+              <br>
+              <br>
+              <h6 class="card-title font-weight-light"><strong><% @wig.id %></strong></h6>
+              <h5 class="card-title font-weight-light"> color: <%= @wig.color %></h5>
+              <h5 class="card-title"> length: <%= @wig.length %>cm</h5>
+          </div>
+      </div>
+    <div class="mt-4 buttonholder">
+    <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
+    <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
     <br>
-    <h5>Length</h5>
-    <li><%=@wig.length%></li>
-    <br>
-    <h5>Owner ID</h5>
-    <li><%=@wig.owner_id%></li>
-    <br>
-  </ul>
-
-  <div class="d-flex justify-content-between my-2">
-  <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary" %>
-  <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
-  <br>
-  <% if @wig.owner == current_user%>
-  <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
-  <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%end%>
+    <% if @wig.owner == current_user%>
+    <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
+    <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%end%>
+    </div>
   </div>
 </div>
