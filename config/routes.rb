@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :wigs do
     resources :wig_rentals, only: %i[new create]
   end
+  get "/mywigs", to: "wigs#mywigs", as: "mywigs"
+  get "/myrentals", to: "wig_rentals#myrentals", as: "myrentals"
+
 end
