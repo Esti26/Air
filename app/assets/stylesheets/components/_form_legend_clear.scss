@@ -63,13 +63,13 @@ legend ~ div.form-check:first-of-type {
 
 input.loglog:hover {
 color: #eee;
-background-color: #7b8ab8 !important;
+background-color: #737476 !important;
 }
 
 #login  {
   a.ghost {
     border-radius: 20px;
-    background-color: #ff1e00;
+    background-color: #000000;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -80,7 +80,7 @@ background-color: #7b8ab8 !important;
     border: 1px solid #FFFFFF;
     &:hover {
       background-color: #ffffff;
-      color: #FF1e00;
+      color: #000000;
     }
   }
 }
@@ -98,6 +98,7 @@ background-color: #7b8ab8 !important;
 
 #login input {
 	background-color: #eee;
+  font-size: 12px;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
@@ -184,9 +185,9 @@ background-color: #7b8ab8 !important;
 }
 
 .overlay {
-	background: #ff1e00;
-	background: -webkit-linear-gradient(to right, #ff1e00, #ff1e00);
-	background: linear-gradient(to right, #FF1e00, #ff1e00);
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #000000, #000000);
+	background: linear-gradient(to right, #000000, #000000);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
