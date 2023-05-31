@@ -24,7 +24,7 @@
   <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap ">
     <% @wigs.each do |wig| %>
         <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg mb-5 bg-white " style="width: 16rem;  border-radius: 10px; ">
-          <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark" do%>
+          <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
           <div class="card-header">
             wig: <%= wig.id %>
           </div>
