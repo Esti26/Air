@@ -1,45 +1,23 @@
-<style>
-#card-div:hover{
-  opacity: 0.9;
-}
 
-.card-body{
-  border-top-left-radius: 100px;
-}
-.wig-card:active{
-  box-shadow: 0 0 30px 0 crimson,
-              0 0 30px 0 crimson,
-              0 0 10px 0 crimson inset;
-}
-</style>
-<div class="container-fluid bg-light" style="height: 100%; ">
-  </div class = "d-flex justify-content-center ">
-    <h1 class = "d-flex justify-content-center ">My rented wigs</h1>
-  </div>
-  <div class = "d-flex justify-content-between align-items-center">
-    <div>
 
-    </div>
-  </div>
-
-  <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap bg-danger">
-    <% @rentals.each do |rental| %>
-        <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg mb-5 bg-white " style="width: 16rem;  border-radius: 10px; ">
-          <%= link_to wig_path(rental.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "My rentals" do%>
-          <div class="card-header d-flex justify-content-center ">
-            rental: <%= rental.id %>
-          </div>
-          <div class="card-body">
-          <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top rounded" alt="...">
+<div class="container-fluid d-flex justify-content-center align-items-center flex-wrap bg-secondary" style=" margin-top: 78px;">
+  <% @rentals.each do |rental| %>
+    <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg bg-white " style="width: 16rem;">
+      <%= link_to wig_path(rental.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
+        <div class="card-header d-flex justify-content-center ">
+          wig: <%= rental.id %>
+        </div>
+        <div class="card-body">
+          <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="wig-image" alt="...">
           <br>
           <br>
-            <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
+          <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
             <h5 class="card-title font-weight-light"> Start: <%= rental.rental_start %></h5>
             <h5 class="card-title"> End: <%= rental.rental_end %></h5>
             <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
             <h5 class="card-title"> Total days rented <%= total_days %></h5>
-          </div>
+           <%= link_to "Edit this rental", edit_wig_path(rental.wig_id), class: "btn btn-dark" %>
         </div>
-      <%end%>
+      </div>
     <%end%>
-  </div>
+  <%end%>
