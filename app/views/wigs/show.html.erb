@@ -14,7 +14,7 @@
               <h5 class="card-title"> length: <%= @wig.length %>cm</h5>
               </div>
           </div>
-    <div class="mb-5 buttonholder description">
+    <div class="mb-5 buttonholder description justify-content-around">
     <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
     <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
     <% if @wig.owner == current_user%>
