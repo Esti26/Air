@@ -1,0 +1,28 @@
+.add-wig {
+  margin-top: 90px;
+  align-items: center;
+}
+
+.big-button {
+  height: 30px;
+  margin-left: 30px;
+}
+
+
+.wig-image {
+  align-items: center;
+  height: 250px;
+  width: 223px;
+  object-fit: cover;
+  border-radius: 2%;
+}
+
+#card-div {
+  border-radius: 10px;
+}
+
+#card-div:hover {
+  opacity: 0.7;
+  border-top-left-radius: 50px;
+  transition-duration: 0.5s;
+}
