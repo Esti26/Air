@@ -1,6 +1,10 @@
 <style>
 #card-div:hover{
-  opacity: 0.7;
+  opacity: 0.9;
+}
+
+.card-body{
+  border-top-left-radius: 100px;
 }
 .wig-card:active{
   box-shadow: 0 0 30px 0 crimson,
@@ -21,11 +25,11 @@
     </div>
   </div>
 
-  <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap ">
+  <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap bg-danger">
     <% @wigs.each do |wig| %>
         <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg mb-5 bg-white " style="width: 16rem;  border-radius: 10px; ">
           <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
-          <div class="card-header">
+          <div class="card-header d-flex justify-content-center ">
             wig: <%= wig.id %>
           </div>
           <div class="card-body">
