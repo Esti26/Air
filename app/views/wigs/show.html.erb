@@ -24,7 +24,9 @@
 
 
     <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
+    <% if @wig.owner != current_user || wig_rental.user_id != null %>
     <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
+    <%end%>
     <% if @wig.owner == current_user%>
     <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
     <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
