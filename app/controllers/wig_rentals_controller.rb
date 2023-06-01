@@ -18,13 +18,25 @@ class WigRentalsController < ApplicationController
     end
   end
 
+  def edit
+    @my_rental = WigRental.find(params[:id])
+    @wig = Wig.find(params[:wig_id])
+  end
+
   def update
     @my_rental = WigRental.find(params[:id])
     if @my_rental.update(wig_rental_params)
-      redirect_to my_rentals_path, notice: 'rental was successfully updated.'
+      redirect_to myrentals_path, notice: 'rental was successfully updated.'
+
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @my_rental = WigRental.find(params[:id])
+    @my_rental.destroy
+    redirect_to myrentals_path, notice: 'rental was successfully removed.'
   end
 
   def myrentals
@@ -36,4 +48,6 @@ class WigRentalsController < ApplicationController
   def wig_rental_params
     params.require(:wig_rental).permit(:user_id, :rental_start, :rental_end, :wig_id)
   end
+
+
 end
