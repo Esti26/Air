@@ -12,9 +12,11 @@ class Wig < ApplicationRecord
     return if price.blank? || length.blank?
 
     if price <= 0
+
       errors.add(:price, "must be greater than zero")
     elsif length <= 0
       errors.add(:length, "must be greater than zero")
+
     end
   end
 
