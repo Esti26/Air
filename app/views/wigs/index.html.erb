@@ -1,8 +1,7 @@
-
 <%# <div class="container-fluid bg-light" style="height: 100%; ">
 </div class = "d-flex justify-content-center "> %>
 <div class="d-flex justify-content-center add-wig">
-  <h1 class = "d-flex justify-content-center">Rent a wig</h1>
+  <h1 class = "d-flex justify-content-center">Add a wig</h1>
   <%= link_to  new_wig_path, title: "add a new wig", class: "btn btn-dark fa-sharp fa-solid fa-plus big-button",data:{toggle:"tooltip", placment: "top"} do %>
   <%end%>
 </div>
@@ -10,15 +9,19 @@
   <% @wigs.each do |wig| %>
     <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg mb-5 bg-white " style="width: 16rem;">
       <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
-        <div class="card-header d-flex justify-content-center ">
-          wig: <%= wig.id %>
-        </div>
-        <div class="card-body">
+        <div class="card-body fullcard">
+          <div class="card-header d-flex justify-content-center">
+           <p> <%= wig.title %> </p>
+          </div>
           <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="wig-image" alt="...">
+          <div class="middletextbox">
+            <div class="text">See details</div>
+          </div>
           <br>
           <br>
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
           <h5 class="card-title font-weight-light"> color: <%= wig.color %></h5>
+          <hr class="solid">
           <h5 class="card-title"> length: <%= wig.length %>cm</h5>
           <h5 class="card-title"> <%= rand(10..500) %>$</h5>
         </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_29_155553) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_01_084924) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_155553) do
     t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "image_url"
+    t.string "title"
+    t.string "description"
   end
 
   add_foreign_key "wig_rentals", "users"

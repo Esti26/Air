@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 gem "devise"
+gem "cloudinary"
 
 
 
@@ -83,3 +84,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "pry-rails"
