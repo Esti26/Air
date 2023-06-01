@@ -14,7 +14,7 @@
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
             <h5 class="card-title font-weight-light"> Start: <%= rental.rental_start %></h5>
             <h5 class="card-title"> End: <%= rental.rental_end %></h5>
-            <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
+            <% total_days = ((rental.rental_end) - (rental.rental_start)).to_i  %>
             <h5 class="card-title"> Total days rented <%= total_days %></h5>
            <%= link_to "Edit this rental", edit_wig_path(rental.wig_id), class: "btn btn-dark" %>
         </div>
