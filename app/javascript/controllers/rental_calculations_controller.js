@@ -8,8 +8,7 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.startTarget)
-    console.log(this.endTarget)
+
   }
   daysRented() {
     const start = new Date(this.startTarget.value)
@@ -25,11 +24,13 @@ export default class extends Controller {
     else if (rented_days == 1) {
       this.daysTarget.innerHTML =  `You are renting the wig fordays <strong> ${rented_days} </strong> day`
       this.priceTarget.innerHTML =  `Total price is ${rented_days*this.priceValue} €`
-    }
-
+      console.log(this, this.priceValue)
+      }
     else{
       this.daysTarget.innerHTML =  `You are renting the wig fordays <strong> ${rented_days} </strong> days`
       this.priceTarget.innerHTML =  `Total price is ${rented_days*this.priceValue} €`
+      console.log(this, this.priceValue)
+
     }
 
   }

@@ -10,7 +10,7 @@ class WigRental < ApplicationRecord
   def rental_end_after_rental_start
     return if rental_end.blank? || rental_start.blank?
 
-    if rental_end < rental_start
+    if rental_end <= rental_start
       errors.add(:rental_end, "must be after the start date")
     end
   end
