@@ -17,6 +17,8 @@ User.delete_all
 end
 colors = ["multi-color", "white", "blue", "blonde", "brown", "blue", "purple", "gray", "pink", "green"]
 
+
+
 images = [
   "https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80.jpg",
   "https://images.unsplash.com/photo-1593880223042-744ce9a4b58f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
