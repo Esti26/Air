@@ -1,4 +1,3 @@
-
 <div class="container mt-5 p-3 justify-content-center">
   <div class="custom-flex m-3 p-3">
     <h1>Wig details</h1>
@@ -9,7 +8,7 @@
 
             <div class="card-body d-flex justify-content-center p-5 m-3">
             <div class="card" style="width: 50%">
-            <%= cl_image_tag @wig.photo.key, height: 300, width: 400, crop: :fill %>
+              <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top rounded" alt="...">
             </div>
               <div class="m-5 text-justify" style="width: 50%">
                 <h6 class="card-title font-weight-light"><strong><% @wig.id %></strong></h6>
@@ -24,7 +23,10 @@
 
 
     <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
-    <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
+
+    <% if @wig.owner != current_user  && !@wig_rentals.pluck(:wig_id).include?(@wig.id) %>
+      <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
+    <%end%>
     <% if @wig.owner == current_user%>
     <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
     <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
