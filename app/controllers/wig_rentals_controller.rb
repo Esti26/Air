@@ -48,6 +48,4 @@ class WigRentalsController < ApplicationController
   def wig_rental_params
     params.require(:wig_rental).permit(:user_id, :rental_start, :rental_end, :wig_id)
   end
-
-
 end
