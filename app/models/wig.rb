@@ -12,12 +12,12 @@ class Wig < ApplicationRecord
     return if price.blank? || length.blank?
 
     if price <= 0
-      errors.add(:price, "Field can't be zero")
+      errors.add(:price, "Field must be greater than zero")
     elsif length <= 0
-      errors.add(:length, "Field can't be zero")
+      errors.add(:length, "Field must be greater than zero")
     end
   end
 
- 
+
 
 end
