@@ -3,7 +3,7 @@ class Wig < ApplicationRecord
   has_many :users, through: :wig_rentals
   has_one_attached :photo
 
-  validates :color, :length, :price, :image_url, :title, presence: true
+  validates :color, :length, :price, :title, presence: true
   validate :greater_than_zero
 
   private
@@ -12,12 +12,12 @@ class Wig < ApplicationRecord
     return if price.blank? || length.blank?
 
     if price <= 0
-      errors.add(:price, "Field can't be zero")
+      errors.add(:price, "must be greater than zero")
     elsif length <= 0
-      errors.add(:length, "Field can't be zero")
+      errors.add(:length, "must be greater than zero")
     end
   end
 
- 
+
 
 end

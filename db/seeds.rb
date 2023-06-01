@@ -22,7 +22,7 @@ end
   wig = Wig.new(color: Faker::Color.color_name, length: Faker::Measurement.length, price: rand(10...42), title: Faker::Movies::HarryPotter.spell, description: Faker::GreekPhilosophers.quote)
   wig.owner = User.all.sample
   wig.photo.attach(io: file, filename: "wig.png", content_type: "image/jpg")
-  wig.save
+  wig.save!
 end
 
 
