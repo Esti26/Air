@@ -12,12 +12,16 @@
           <br>
           <br>
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
-            <h5 class="card-title font-weight-light"> Start: <%= rental.rental_start %></h5>
+            <h5 class="card-title font-weight-light "> Start: <%= rental.rental_start %></h5>
             <h5 class="card-title"> End: <%= rental.rental_end %></h5>
             <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
             <h5 class="card-title">Total days rented <%= total_days %></h5>
-           <%= link_to "Edit this rental", edit_wig_path(rental.wig_id), class: "btn btn-dark" %>
+            <div class ="d-flex justify-content-between " style = "margin-left: -130px;">
+              <%= link_to "Edit", edit_wig_wig_rental_path(wig_id: rental.wig_id, id: rental.id), class: "order-1 btn btn-success text-light"%>
+              <%= link_to "",  wig_rental_path(rental.id),  class: "order-3 btn btn-outline-danger fa-solid fa-trash-can pt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </div>
         </div>
       </div>
     <%end%>
   <%end%>
+</div>
