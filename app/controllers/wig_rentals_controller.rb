@@ -20,6 +20,7 @@ class WigRentalsController < ApplicationController
 
   def edit
     @my_rental = WigRental.find(params[:id])
+    @wig = Wig.find(params[:wig_id])
   end
 
   def update
