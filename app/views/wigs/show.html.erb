@@ -27,11 +27,11 @@
       <div class="mb-5 buttonholder description">
         <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
         <% if @wig.owner != current_user  && !@wig_rentals.pluck(:wig_id).include?(@wig.id) %>
-          <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success" %>
+          <%= link_to "Rent this wig", new_wig_wig_rental_path(@wig.id), class: "btn btn-success text-light", style: "margin-right: 580px;" %>
         <%end%>
         <% if @wig.owner == current_user%>
-          <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
-          <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "order-1 btn btn-success text-light" %>
+          <%= link_to "", wig_path(@wig.id),  class: "order-3 btn btn-outline-danger fa-solid fa-trash-can pt-2 rentaldeletebutton", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         <%end%>
       </div>
       <br>
