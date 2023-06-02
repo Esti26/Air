@@ -5,16 +5,41 @@
   flex-direction: column;
 }
 
+.showcard {
+  height: 80%;
+}
+
+#showcard {
+  opacity: 65%;
+  transition: 0.5s;
+}
+
+#showcard:hover {
+  opacity: 1;
+  background: rgb(255, 255, 255);
+
+}
+
+.showimage {
+  align-items: center;
+  height: 250px;
+  width: 223px;
+  object-fit: cover;
+  border-radius: 2%;
+}
+
 
 
 .buttonholder{
   display: flex;
   justify-content: center;
+  padding-bottom: 10%;
+}
 
 .first_button {
   margin-right: 13px;
 }
-}
+
 
 .description{
   font-size: 100px;
