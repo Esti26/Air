@@ -20,6 +20,4 @@ class Wig < ApplicationRecord
     end
   end
 
-
-
 end
