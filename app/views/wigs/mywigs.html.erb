@@ -9,7 +9,7 @@
       <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
         <div class="card-body fullcard">
           <div class="card-header d-flex justify-content-center">
-           <h3 class="titletext"> <%= wig.title %> <hr class="solid"> </h3>
+          <h3 class="titletext"> <%= wig.title %> <hr class="solid"> </h3>
 
           </div>
           <%= cl_image_tag wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
@@ -21,8 +21,14 @@
           <h5 class="card-title font-weight-light" > <i class="fa-solid fa-paintbrush" style="color: #00060f;"></i>  <%= wig.color %></h5>
           <h5 class="card-title"> <i class="fa-solid fa-ruler-vertical" style="color: #000000;"></i> <%= wig.length %>cm</h5>
           <h5 class="card-title"> <i class="fa-solid fa-tag" style="color: #000000;"></i> <%= wig.price %>$</h5>
-          <%# <% rental = WigRental.find(wig.id) %>
-          <%# <%=rental%>
+          <% @rentals.each do |rental|%>
+            <% if rental.wig_id == wig.id %>
+            <div style="color: rgb(91, 121, 120)">
+              <%= "Rented from"%> <strong><%="#{rental.rental_start.strftime("#{rental.rental_start.day.ordinalize} of %B %Y")}"%></strong>
+              <%= "until"%> <strong><%="#{rental.rental_start.strftime("#{rental.rental_end.day.ordinalize} of %B %Y")}"%></strong>
+            </div>
+            <% end %>
+          <% end %>
             <div class ="d-flex justify-content-between " style = "margin-left: -130px;">
               <%= link_to "Edit", edit_wig_path(wig.id), class: "order-1 btn btn-success text-light" %>
               <%= link_to "", wig_path(wig.id),  class: "order-3 btn btn-outline-danger fa-solid fa-trash-can pt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
