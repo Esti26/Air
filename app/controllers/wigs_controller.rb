@@ -9,7 +9,7 @@ class WigsController < ApplicationController
     @current_user = current_user
     @wig_rentals = WigRental.all
     @wig_rental = WigRental.where(wig_id: params[:id]).first
-    
+
   end
 
   def new
@@ -54,6 +54,6 @@ class WigsController < ApplicationController
   end
 
   def wig_params
-    params.require(:wig).permit(:color, :length, :owner_id, :price, :image_url, :title, :description, :photo)
+    params.require(:wig).permit(:color, :length, :owner_id, :price, :image_url, :title, :description, :photo, :color_code)
   end
 end
