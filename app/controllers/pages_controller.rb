@@ -7,4 +7,5 @@ class PagesController < ApplicationController
   def log_in
     @user = User.find(:email, :password)
   end
+  
 end
