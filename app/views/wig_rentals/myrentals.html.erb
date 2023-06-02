@@ -14,8 +14,8 @@
           <br>
           <br>
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
-            <h5 class="card-title font-weight-light "> Start: <%= rental.rental_start %></h5>
-            <h5 class="card-title"> End: <%= rental.rental_end %></h5>
+            <h5 class="card-title font-weight-light "> Start: <strong><%="#{rental.rental_start.strftime("#{rental.rental_start.day.ordinalize} of %B %Y")}"%></strong></h5>
+            <h5 class="card-title"> End: <strong><%="#{rental.rental_end.strftime("#{rental.rental_end.day.ordinalize} of %B %Y")}"%></strong> </h5>
             <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
             <h5 class="card-title">Total days rented <%= total_days %></h5>
             <div class ="d-flex justify-content-between " style = "margin-left: -130px;">
