@@ -23,14 +23,16 @@
 
 #card-div {
   border-radius: 10px;
+  opacity: 65%;
+  transition: 0.5s;
 }
 
 .fullcard {
-  box-shadow: 10px 5px 10px;
+  box-shadow: 0px 0px 20px;
 }
 
 #card-div:hover {
-  opacity: 0.7;
+  opacity: 1;
   background: rgb(130, 174, 194);
   border-top-left-radius: 50px;
   transition-duration: 0.5s;
