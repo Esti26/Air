@@ -5,7 +5,7 @@
   <%= link_to  new_wig_path, title: "add a new wig", class: "btn btn fa-sharp fa-solid fa-plus big-button",data:{toggle:"tooltip", placment: "top"} do %>
   <%end%>
 </div>
-<div cl[ass="container-fluid d-flex justify-content-center align-items-center flex-wrap bigboy">
+<div class="container-fluid d-flex justify-content-center align-items-center flex-wrap bigboy">
   <% @wigs.each do |wig| %>
     <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg mb-5 bg-white " style="width: 16rem;">
       <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
