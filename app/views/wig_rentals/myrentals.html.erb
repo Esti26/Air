@@ -1,4 +1,3 @@
-
 <div class="d-flex justify-content-center add-wig">
   <h1 class = "d-flex justify-content-center">My wig rentals</h1>
 </div>
@@ -6,22 +5,22 @@
   <% @rentals.each do |rental| %>
     <div id = "card-div" class="card mx-5 my-3 d-flex justify-content-center shadow-lg bg-white " style="width: 16rem;">
       <%= link_to wig_path(rental.wig_id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
-        <div class="card-header d-flex justify-content-center ">
-        <%= rental.wig.title %>
-        </div>
-        <div class="card-body">
+        <div class="card-body fullcard">
+          <div class="card-header d-flex justify-content-center ">
+            <h3 class="titletext"> <%= rental.wig.title %> <hr class="solid"> </h3>
+          </div>
           <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="wig-image" alt="...">
           <br>
           <br>
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
-            <h5 class="card-title font-weight-light "> Start: <%= rental.rental_start %></h5>
-            <h5 class="card-title"> End: <%= rental.rental_end %></h5>
-            <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
-            <h5 class="card-title">Total days rented <%= total_days %></h5>
-            <div class ="d-flex justify-content-between " style = "margin-left: -130px;">
-              <%= link_to "Edit", edit_wig_wig_rental_path(wig_id: rental.wig_id, id: rental.id), class: "order-1 btn btn-success text-light"%>
-              <%= link_to "",  wig_rental_path(rental.id),  class: "order-3 btn btn-outline-danger fa-solid fa-trash-can pt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-            </div>
+          <h5 class="card-title font-weight-light "> Start: <%= rental.rental_start %></h5>
+          <h5 class="card-title"> End: <%= rental.rental_end %></h5>
+          <% total_days = ((rental.rental_end)-(rental.rental_start)).to_i  %>
+          <h5 class="card-title">Total days rented <%= total_days %></h5>
+          <div class ="d-flex justify-content-between " style = "margin-left: -130px;">
+            <%= link_to "Edit", edit_wig_wig_rental_path(wig_id: rental.wig_id, id: rental.id), class: "order-1 btn btn-success text-light"%>
+            <%= link_to "",  wig_rental_path(rental.id),  class: "order-3 btn btn-outline-danger fa-solid fa-trash-can pt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
         </div>
       </div>
     <%end%>
