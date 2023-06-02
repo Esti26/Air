@@ -11,12 +11,18 @@
       </div>
       <div class="card-body d-flex justify-content-center p-5 m-3">
         <div style="width: 50%">
-          <%= cl_image_tag @wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
+          <% if @wig.photo.key? %>
+            <%= cl_image_tag @wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
+          <% else %>
+            <%= image_tag "default-photo.jpg", class:"wig-image" %>
+          <% end %>
         </div>
         <div class="m-5 text-justify" style="width: 50%">
           <h6 class="card-title font-weight-light"><strong><% @wig.id %></strong></h6>
-          <h4 class="card-title font-weight-light"> <i class="fa-solid fa-paintbrush" style="color: #00060f;"></i> <%= @wig.color %></h4>
-          <button class="product-detail-color-selector__color-button" style="background-color: <%=@wig.color_code%>"></button>
+          <h4 class="card-title font-weight-light d-flex col-2 justify-content-between">
+            <i class="fa-solid fa-paintbrush" style="color: #00060f;"></i>
+            <button class="product-detail-color-selector__color-button" title = <%=@wig.color%> style="background-color: <%=@wig.color_code%>"></button>
+          </h4>
           <hr class="solid">
           <h4 class="card-title"><i class="fa-solid fa-ruler-vertical" style="color: #000000;"></i> <%= @wig.length %>cm</h4>
           <hr class="solid">
