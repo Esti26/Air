@@ -16,6 +16,7 @@
         <div class="m-5 text-justify" style="width: 50%">
           <h6 class="card-title font-weight-light"><strong><% @wig.id %></strong></h6>
           <h4 class="card-title font-weight-light"> <i class="fa-solid fa-paintbrush" style="color: #00060f;"></i> <%= @wig.color %></h4>
+          <button class="product-detail-color-selector__color-button" style="background-color: <%=@wig.color_code%>"></button>
           <hr class="solid">
           <h4 class="card-title"><i class="fa-solid fa-ruler-vertical" style="color: #000000;"></i> <%= @wig.length %>cm</h4>
           <hr class="solid">

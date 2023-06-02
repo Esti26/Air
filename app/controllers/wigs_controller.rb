@@ -9,6 +9,7 @@ class WigsController < ApplicationController
     @current_user = current_user
     @wig_rentals = WigRental.all
     @wig_rental = WigRental.where(wig_id: params[:id]).first
+    
   end
 
   def new
