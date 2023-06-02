@@ -1,17 +1,21 @@
-<div class="container mt-5 p-3 justify-content-center">
+<div class="d-flex justify-content-center add-wig">
+  <h1 class = "d-flex justify-content-center">Wig details</h1>
+</div>
+<div class="container-fluid d-flex justify-content-center flex-wrap bigboy">
   <div class="custom-flex m-3 p-3">
-    <h1>Wig details</h1>
-    <br><br>
-      <div class="card mx-5 my-1" style="width: 80%;  border-radius: 10px;">
-        <div class="card-header text-center"></div>
-            <div class="card-body d-flex justify-content-center p-5 m-3">
-            <div class="card" style="width: 50%">
-              <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top rounded" alt="...">
-            </div>
-              <div class="m-5 text-justify" data-rental-calculations-price-value="<%=@wig.price%>" data-controller="rental-calculations" style="width: 50%">
-                <h6 class="card-title font-weight-light"><strong><% @wig.id %></strong></h6>
-                <h5 class="card-title font-weight-light"> color: <%= @wig.color %></h5>
-                <h5 class="card-title"> length: <%= @wig.length %>cm</h5>
+    <br>
+    <br>
+    <div id="showcard" class="card mx-5 my-1 showcard fullcard" style="  border-radius: 10px;">
+      <div class="card-header text-center titletext">
+        <h3><%= @wig.title %></h3>
+      </div>
+      <div class="card-body d-flex justify-content-center p-5 m-3">
+        <div style="width: 50%">
+          <%= cl_image_tag @wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
+        </div>
+        <div class="m-5 text-justify" style="width: 50%">
+          <h1>Wig details</h1>
+          <div class="m-5 text-justify" data-rental-calculations-price-value="<%=@wig.price%>" data-controller="rental-calculations" style="width: 50%">
                   <%= simple_form_for([@wig, @wig_rental]) do |f| %>
                       <%= f.input :rental_start,
                       as: :string,
@@ -22,16 +26,17 @@
                       <p data-rental-calculations-target="days" > </p>
                       <p data-rental-calculations-target="price" > </p>
 
-                  <%= f.submit "Rent This Wig", :class => "btn btn-success btn-mini" %>
-              <% end %>
+                      <%= f.submit "Rent This Wig", :class => "btn btn-success btn-mini" %>
+                  <% end %>
               </div>
-          </div>
-    <div class="mb-5 buttonholder description">
-    <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
-      <% if @wig.owner == current_user%>
-      <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
-      <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <%end%>
+        </div>
+      </div>
+      <div class="mb-5 buttonholder description">
+        <%= link_to "Back to all wigs", wigs_path, class: "btn btn-primary first_button" %>
+        <% if @wig.owner == current_user%>
+        <%= link_to "Edit this wig", edit_wig_path(@wig.id), class: "btn btn-dark" %>
+        <%= link_to "Delete this wig", wig_path(@wig.id),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%end%>
       </div>
       <br>
     </div>
