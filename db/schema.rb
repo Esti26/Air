@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_131018) do
 
   create_table "wigs", force: :cascade do |t|
     t.string "color"
+    t.string "color_code"
     t.integer "length"
     t.integer "owner_id"
     t.datetime "created_at", null: false
