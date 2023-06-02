@@ -43,7 +43,7 @@ class WigsController < ApplicationController
 
   def mywigs
     @wigs = Wig.where(owner: current_user)
-    # @rental = WigRental.find(:wig_id)
+    @rentals = WigRental.all
   end
 
   private
