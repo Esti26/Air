@@ -11,10 +11,14 @@
       <%= link_to wig_path(wig.id), data:{}, class:"wig-card text-decoration-none text-dark", title: "show this wig" do%>
         <div class="card-body fullcard">
           <div class="card-header d-flex justify-content-center">
-           <h3 class="titletext"> <%= wig.title %> <hr class="solid"> </h3>
+            <h3 class="titletext"> <%= wig.title %> <hr class="solid"> </h3>
 
           </div>
+          <% if wig.photo.key? %>
           <%= cl_image_tag wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
+          <% else %>
+          <%= image_tag "default-photo.jpg", class:"wig-image" %>
+          <% end %>
           <div class="middletextbox">
             <div class="text">See details</div>
           </div>
