@@ -33,7 +33,7 @@ images = [
 ]
 10.times do |i|
   file = URI.open(images[i])
-  wig = Wig.new(color: colors[i], length: Faker::Measurement.length, price: rand(10...42), title: Faker::Name.first_name, description: Faker::GreekPhilosophers.quote)
+  wig = Wig.new(color: colors[i], length: rand(2..20), price: rand(10...42), title: Faker::Name.first_name, description: Faker::GreekPhilosophers.quote)
   wig.owner = User.all.sample
   wig.photo.attach(io: file, filename: "wig.png", content_type: "image/jpg")
   wig.save!
