@@ -9,7 +9,7 @@
           <div class="card-header d-flex justify-content-center ">
             <h3 class="titletext"> <%= rental.wig.title %> <hr class="solid"> </h3>
           </div>
-          <img src="https://images.unsplash.com/photo-1595888433198-fc3fba4d48e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="wig-image" alt="...">
+          <%= cl_image_tag rental.wig.photo.key, height: 300, width: 400, crop: :fill,  class:"wig-image" %>
           <br>
           <br>
           <h6 class="card-title font-weight-light"><strong><% %></strong></h6>
