@@ -24,7 +24,7 @@
 #card-div {
   border-radius: 10px;
   opacity: 65%;
-  transition: 0.5s;
+  transition: 0.5s all ease-in-out;
 }
 
 .fullcard {
@@ -36,6 +36,7 @@
   background: rgb(130, 174, 194);
   border-top-left-radius: 50px;
   transition-duration: 0.5s;
+  transform: scale(1.05);
 }
 
 .middletextbox {
