@@ -22,12 +22,12 @@ export default class extends Controller {
     else if(!rented_days)
       this.daysTarget.innerHTML = "you have to choose both dates"
     else if (rented_days == 1) {
-      this.daysTarget.innerHTML =  `You are renting the wig fordays <strong> ${rented_days} </strong> day`
+      this.daysTarget.innerHTML =  `You are renting the wig for <strong> ${rented_days} </strong> day`
       this.priceTarget.innerHTML =  `Total price is ${rented_days*this.priceValue} €`
       console.log(this, this.priceValue)
       }
     else{
-      this.daysTarget.innerHTML =  `You are renting the wig fordays <strong> ${rented_days} </strong> days`
+      this.daysTarget.innerHTML =  `You are renting the wig for <strong> ${rented_days} </strong> days`
       this.priceTarget.innerHTML =  `Total price is ${rented_days*this.priceValue} €`
       console.log(this, this.priceValue)
 
