@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rental system for wigs (variation of the AirBnB Website).
+
+Funtionalities:
+  - publish new wigs
+  - rent out wigs
+  - edit description
+  - delete your pubished wigs
+  - rent a wig
