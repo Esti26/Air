@@ -13,7 +13,10 @@ Wig.delete_all
 User.delete_all
 
 10.times do
-  User.create!(email: Faker::Internet.email, password: "123456")
+  User.create(email: 'esti@email.com', password: "123456")
+  User.create(email: 'ahmed@email.com', password: "123456")
+  User.create(email: 'william@email.com', password: "123456")
+  User.create(email: 'madhava@email.com', password: "123456")
 end
 colors = ["blue", "white", "blue", "blonde", "brown", "blue", "purple", "gray", "pink", "green"]
 colors_code = ["#35ecd7;", "#f2f2f2;", "#35ecd7;", "#b2b229;", "#ad8a42;", "#35ecd7;", "#7631b6;", "#b2acb7;", "#f6c1f2;", "#68b631;"]
